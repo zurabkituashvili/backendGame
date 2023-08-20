@@ -1,15 +1,22 @@
 const app = require("express")();
 const dotenv = require("dotenv");
+const http = require("http");
 
 dotenv.config({ path: "./config.env" });
 
-const server = require("https").createServer(app);
+const server = http.createServer(app);
 
 const io = require("socket.io")(server, {
   cors: {
     origin: "https://frontend-game1.vercel.app/",
   },
 });
+
+// const io = require("socket.io")(server, {
+//   cors: {
+//     origin: "http://localhost:3000",
+//   },
+// });
 
 const {
   userJoin,
