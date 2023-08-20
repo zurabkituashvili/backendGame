@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "https://frontend-game1.vercel.app/",
+    origin: "https://frontend-game1.vercel.app",
   },
 });
 
